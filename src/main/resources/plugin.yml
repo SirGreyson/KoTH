@@ -1,0 +1,7 @@
+name: KoTH
+version: 1.0
+description: KoTH Plugin for Haydzcraft
+author: SirReason
+
+main: co.reasondev.koth.KoTH
+depend: [WorldEdit, WorldGuard]

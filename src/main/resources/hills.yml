@@ -1,0 +1,14 @@
+### KoTH Plugin Hills Configuration ###
+## NOTICE: These comments will be over-written when the server saves ##
+
+## Unique ID of the Hill ##
+testHill:
+  # World Guard Region linked to this Hill #
+  hillRegion: testRegion
+  # Name of the World this Hill is in #
+  worldName: world
+  # Display name of this Hill (used in chat messages) #
+  displayName: '&cTest Hill'
+  # Location where the reward chest will spawn when this Hill is claimed #
+  # Also used as the location for /koth tp <hillID> #
+  chestSpawnLocation: world,-181,4,241
