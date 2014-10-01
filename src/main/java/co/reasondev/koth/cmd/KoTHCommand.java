@@ -6,6 +6,7 @@
 
 package co.reasondev.koth.cmd;
 
+import co.reasondev.koth.config.ConfigHandler;
 import co.reasondev.koth.hill.Hill;
 import co.reasondev.koth.hill.HillHandler;
 import co.reasondev.koth.util.Messaging;
@@ -19,8 +20,11 @@ import org.bukkit.entity.Player;
 
 public class KoTHCommand {
 
-    //Command(aliases = {"reload"}, desc = "Hill configuration reloading command", max = 0, help = "Reloads the Hill configuration file")
-    //public static void reloadHillConfig(CommandContext args, CommandSender sender) throws CommandException {}
+    @Command(aliases = {"reload"}, desc = "Hill configuration reloading command", max = 0, help = "Reloads the Hill configuration file")
+    public static void reloadHillConfig(CommandContext args, CommandSender sender) throws CommandException {
+        ConfigHandler.reloadConfig("hills");
+        Messaging.send(sender, "&aHills configuration reloaded..!");
+    }
 
     @Command(aliases = {"create"}, desc = "Hill creation command", usage = "<ID> <RegionID> [-d <displayName>]", flags = "d:", min = 2
             , help = "Creates a new Hill with a given ID and sets its chest spawn Location at the sender's current Location")

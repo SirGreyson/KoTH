@@ -17,7 +17,7 @@ import java.util.TreeMap;
 
 public class ConfigHandler {
 
-    private KoTH plugin;
+    private static KoTH plugin;
     private static Map<String, YamlConfiguration> loadedConfigs = new TreeMap<String, YamlConfiguration>(String.CASE_INSENSITIVE_ORDER);
 
     public ConfigHandler(KoTH plugin) {
@@ -39,6 +39,10 @@ public class ConfigHandler {
 
     public static YamlConfiguration getConfig(String fileName) {
         return loadedConfigs.get(fileName);
+    }
+
+    public static void reloadConfig(String fileName) {
+        loadedConfigs.put(fileName, YamlConfiguration.loadConfiguration(new File(plugin.getDataFolder(), fileName + ".yml")));
     }
 
     private void loadConfig(String fileName) {
