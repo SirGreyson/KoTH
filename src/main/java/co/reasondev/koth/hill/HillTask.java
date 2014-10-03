@@ -85,7 +85,7 @@ public class HillTask {
         return plugin.getHillHandler().getHill(activeHill);
     }
 
-    private void setActiveHill(Hill hill) {
+    public void setActiveHill(Hill hill) {
         if(activeHill != null) getActiveHill().resetHill();
         this.activeHill = hill.getHillID();
         Messaging.broadcast(Settings.Broadcasts.HILL_ACTIVE.toString().replace("%hill%", hill.getDisplayName(true)).replace("%coords%", StringUtil.formatLocation(hill.getChestSpawnLoc())));

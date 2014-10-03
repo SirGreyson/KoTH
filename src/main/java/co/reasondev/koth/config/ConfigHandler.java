@@ -41,8 +41,9 @@ public class ConfigHandler {
         return loadedConfigs.get(fileName);
     }
 
-    public static void reloadConfig() {
-        plugin.reloadConfig();
+    public static void reloadConfig(String fileName) {
+        File cFile = new File(plugin.getDataFolder(), fileName + ".yml");
+        loadedConfigs.put(fileName, YamlConfiguration.loadConfiguration(cFile));
     }
 
     private void loadConfig(String fileName) {

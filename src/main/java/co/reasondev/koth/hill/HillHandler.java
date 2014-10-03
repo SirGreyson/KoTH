@@ -19,14 +19,18 @@ import java.util.*;
 public class HillHandler {
 
     private KoTH plugin;
-    private HillTask hillTask;
-    private YamlConfiguration hillC = ConfigHandler.getConfig("hills");
+    private static HillTask hillTask;
+    private static YamlConfiguration hillC = ConfigHandler.getConfig("hills");
     private static Map<String, Hill> loadedHills = new TreeMap<String, Hill>(String.CASE_INSENSITIVE_ORDER);
     private static Random random = new Random();
 
     public HillHandler(KoTH plugin) {
         this.plugin = plugin;
-        this.hillTask = new HillTask(plugin);
+        hillTask = new HillTask(plugin);
+    }
+
+    public static HillTask getHillTask() {
+        return hillTask;
     }
 
     public void loadHills() {
@@ -70,6 +74,7 @@ public class HillHandler {
     }
 
     public static void removeHill(String hillID) {
+        hillC.set(hillID, null);
         loadedHills.remove(hillID);
     }
 

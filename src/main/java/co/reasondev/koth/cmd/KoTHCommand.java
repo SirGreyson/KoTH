@@ -22,8 +22,14 @@ public class KoTHCommand {
 
     @Command(aliases = {"reload"}, desc = "Hill configuration reloading command", max = 0, help = "Reloads the Hill configuration file")
     public static void reloadHillConfig(CommandContext args, CommandSender sender) throws CommandException {
-        ConfigHandler.reloadConfig();
+        ConfigHandler.reloadConfig("config");
         Messaging.send(sender, "&aPlugin configuration reloaded..!");
+    }
+
+    @Command(aliases = {"start"}, desc = "Hill force-starting command", max = 0, help = "Starts the next Hill automatically")
+    public static void startHill(CommandContext args, CommandSender sender) throws CommandException {
+        Messaging.send(sender, "&aForce starting Hill selection...");
+        HillHandler.getHillTask().setActiveHill(HillHandler.getRandomHill());
     }
 
     @Command(aliases = {"create"}, desc = "Hill creation command", usage = "<ID> <RegionID> [-d <displayName>]", flags = "d:", min = 2

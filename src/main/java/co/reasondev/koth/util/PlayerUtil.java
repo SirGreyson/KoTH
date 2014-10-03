@@ -28,6 +28,10 @@ public class PlayerUtil {
     }
 
     public static boolean isClaimingHill(Player player, Hill hill) {
+        if(hill.getHillRegion() == null) {
+            Messaging.printErr("Hill Region is Null!");
+            return false;
+        }
         return isInRegion(player, hill.getHillRegion());
     }
 
