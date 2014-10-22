@@ -1,0 +1,34 @@
+### KotH Message Configuration ###
+
+## Configuration for private (Player) messages sent by the plugin ##
+messages: 
+
+  # Prefix for all private messages #
+  PREFIX: '&7[&cKotH&7]&r'
+  
+  # Message sent when a Player starts claiming a Hill #
+  PLAYER_CLAIMING_HILL: '&aYou are now claiming this Hill! Stay on the Hill to become King!'
+  # Message sent when a Player becomes King of a Hill #
+  # %hill% = the display name of the claimed Hill #
+  PLAYER_CLAIMED_HILL: '&aYou have successfully claimed %hill%&a! A reward Chest has been spawned at the Hill!'
+  # Message sent when a Player tries to open a Hill's reward chest without being the King #
+  PLAYER_NOT_KING: '&cThis chest can only be opened by the King of this Hill!'
+  
+## Configuration for public (Server) messages sent by the plugin ##
+broadcasts: 
+
+  # Prefix for all public messages #
+  PREFIX: '&7[&4KotH&7]&r'
+  # Broadcast sent when a random Hill becomes active #
+  # %hill% = the display name of the active Hill #
+  # %coords% = the coordinates of the active Hill #
+  HILL_ACTIVE: '%hill% &ais now active! Get to &e%coords% &ato claim the Hill!'
+  # Broadcast sent every time a Player holds a Hill for another minute #
+  # %hill% = the display name of the active Hill #
+  # %coords% = the coordinates of the active Hill #
+  # %player% = the Player claiming the active Hill #
+  PLAYER_CLAIMING_HILL: '%hill% &ais being claimed by &e%player%&a! Stop them!'
+  # Broadcast message sent when a Player becomes King of a Hill #
+  # %hill% = the display name of the claimed Hill #
+  # %player% = the king Player's name # 
+  PLAYER_CLAIMED_HILL: '%hill% &ahas been claimed by &e%player%&a!'

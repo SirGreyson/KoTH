@@ -1,0 +1,21 @@
+### KoTH Plugin Configuration ###
+
+## How long (in seconds) after the server starts should a Hill be randomly selected? ##
+## This value is also the delay for Hill rotation after the active Hill has been claimed ##
+HILL_ROTATE_DELAY: 900
+## How long (in seconds) should a Player have to stay on the Hill to become King? ##
+HILL_CLAIM_DELAY: 600
+## Number of seconds between each broadcast of PLAYER_CLAIMING_HILL ##
+HILL_CLAIM_BROADCAST: 60
+
+## Inventory for the reward chest spawned when a Player becomes King of a Hill ##
+## Item Format: 'MATERIAL:AMOUNT:[DISPLAYNAME]:[LORE1,LORE2]:[ENCHANT/LEVEL]=[%CHANCE]' ## 
+## You can use 'none' for no custom value on either DISPLAYNAME, LORE or ENCHANT ##
+## The chance value is out of 100. If no chance is specified the chance defaults to 100 ##
+## Material values can be found here: http://jd.bukkit.org/rb/apidocs/org/bukkit/Material.html ##
+## Enchantment values can be found here: http://jd.bukkit.org/rb/apidocs/org/bukkit/enchantments/Enchantment.html ##
+CHEST_LOADOUT:
+- 'DIRT:64'
+- 'DIAMOND:1=50'
+- 'DIAMOND:1:&bSpecial Diamond=35'
+- 'DIAMOND:1:&cSuper Diamond:none:LUCK/1=20'
