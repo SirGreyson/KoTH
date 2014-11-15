@@ -13,6 +13,10 @@ public enum Settings {
 
     private static YamlConfiguration c = ConfigHandler.getConfig("config");
 
+    public static void updateConfig() {
+        Settings.c = ConfigHandler.getConfig("config");
+    }
+
     public String toString() {
         return c.getString(name());
     }

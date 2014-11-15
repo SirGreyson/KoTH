@@ -2,6 +2,7 @@ package co.reasondev.koth.cmd;
 
 import co.reasondev.koth.KotH;
 import co.reasondev.koth.Messaging;
+import co.reasondev.koth.config.Settings;
 import co.reasondev.koth.hill.Hill;
 import co.reasondev.koth.hill.HillHandler;
 import co.reasondev.koth.util.PlayerUtil;
@@ -16,6 +17,13 @@ import org.bukkit.entity.Player;
 public class KotHCommand {
 
     private static KotH plugin = KotH.getInstance();
+
+    @Command(aliases = {"reload"}, desc = "Configuration reloading command", max = 0, help = "Reload the config.yml file")
+    public static void reloadConfig(CommandContext args, CommandSender sender) throws CommandException {
+        plugin.getConfigHandler().loadConfig("config");
+        Settings.updateConfig();
+        Messaging.send(sender, "&aSuccesfully reloaded config.yml file");
+    }
 
     @Command(aliases = {"start"}, desc = "Hill force-starting command", max = 0, help = "Starts the next Hill automatically")
     public static void startHill(CommandContext args, CommandSender sender) throws CommandException {

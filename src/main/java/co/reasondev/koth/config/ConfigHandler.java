@@ -55,10 +55,10 @@ public class ConfigHandler {
      *
      * @param fileName The name of the file without a .yml ending
      */
-    private void loadConfig(String fileName) {
+    public void loadConfig(String fileName) {
         File cFile = new File(plugin.getDataFolder(), fileName + ".yml");
         if (!validateFile(cFile)) Messaging.printErr("Error! Could not load Configuration!", fileName);
-        else if (!isConfigLoaded(fileName)) loadedConfigs.put(fileName, YamlConfiguration.loadConfiguration(cFile));
+        else loadedConfigs.put(fileName, YamlConfiguration.loadConfiguration(cFile));
     }
 
     /**
